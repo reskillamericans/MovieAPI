@@ -1,13 +1,50 @@
-I hope that I did this right. I am defintely open to suggestions if there are some things that aren't right.
+# MovieAPI app
 
-Okay. 
-I what I see in my mind is a page with a very basic backgound as that isn't my main focus(maybe if time permits). There's a simple title that basically says something like cinema review editor. There will be a button for each different API request that will correspond to the movie page(example: delete one movie review button that will make the delete API request). 
-I will have about 4 movies that will come with: title,rating score,and review(I believe i will have an nested array that will hold all movies and arrays for each movie)
+This app is a final project for Reskill Americans.  The app is focused on
+movie reviews.  It uses Express on the (node.js) server and implements a JSON
+api for creating and modifying reviews.
 
-As far as what my Req, Res will look like I got kind of confused with that just a little. If I was to make a guess on what that means.
-The request would be the URL depending on what request is made. So app.get('/movies',(req,res))
-app.get('/movies/:SingleMovieId')
-I am going to spend sone time looking that information up to see what I can find and what I can add to it
+# Database Schema
 
-What is the Json response look like?
- Use events app as a model(structur, set-up)
+This project uses the mongo db database engine, and the mongoose database
+access library.
+
+Our database has a reviews collection with the following information for
+each movie:
+
+- id (text)
+- Title (text)
+- Rating (numeric score)
+- Review (text)
+
+# API
+
+- Create (POST /reviews)
+- Read (GET /reviews/:id)
+- Update (PUT /reviews/:id)
+- Delete (DELETE /reviews/:id)
+
+# Questions
+
+- Is this site just the work of a single reviewer?  Should there be multiple
+  reviews per movie - or just one?
+
+# Using this Repo
+
+This repo uses Express, mongo, and Mongoose.  It was created via:
+
+```
+$ npx express-generator --no-view --git
+```
+
+Everything can be installed via npm:
+
+```
+$ npm install
+```
+
+To serve the app locally:
+
+```
+$ npm start
+```
